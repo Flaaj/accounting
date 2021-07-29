@@ -1,16 +1,23 @@
-import { Button, Menu } from "@material-ui/core";
 import React, { useState, useRef } from "react";
-import MenuIcon from "@material-ui/icons/Menu";
+import { useDispatch } from "react-redux";
+// material ui:
+import { Button, Menu } from "@material-ui/core";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-
+import MenuIcon from "@material-ui/icons/Menu";
+// store:
+import { Actions } from "../store/actionCreators";
+// styles:
 import "./navbar.scss";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const menuAnchor = useRef(null);
+    const dispatch = useDispatch();
+
     return (
         <nav className="navbar">
-            <Button>
+            <Button onClick={() => dispatch(Actions.toggleSidebar())}>
                 <MenuIcon />
             </Button>
             <Button ref={menuAnchor} onClick={() => setMenuOpen(!menuOpen)}>
@@ -23,8 +30,14 @@ const Navbar = () => {
                 keepMounted
                 onClose={() => setMenuOpen(!menuOpen)}
             >
-                <Button>Profile</Button>
-                <Button>Logout</Button>
+                <Button>
+                    <Link className="user-menu__link" to="/profile">
+                        Profile
+                    </Link>
+                </Button>
+                <Button>
+                    <span className="user-menu__link">Logout</span>
+                </Button>
             </Menu>
         </nav>
     );
