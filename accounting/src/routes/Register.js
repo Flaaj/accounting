@@ -1,12 +1,6 @@
-import React from 'react';
-import Layout from '../layouts/Auth.layout';
+import React from "react";
+import Layout from "../layouts/Auth.layout";
 
-const Register = () => {
-    return (
-        <Layout>
-            
-        </Layout>
-    );
-}
+const Register = () => <Layout></Layout>;
 
 export default Register;
