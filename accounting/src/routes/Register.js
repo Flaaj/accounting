@@ -31,9 +31,9 @@ const Register = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         label="Email"
-                        // error
                         helperText=" "
                         color="primary"
+                        error={false}
                     />
                     <TextField
                         value={password}

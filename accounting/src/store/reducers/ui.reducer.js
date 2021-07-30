@@ -1,7 +1,7 @@
 import { UiTypes as ActionTypes } from "../actionTypes/ui.types";
 
 const initialState = {
-    showSidebar: false,
+    showSidebar: true,
     menuItems: [
         { name: "Account", slug: "/" },
         { name: "History", slug: "/history" },

@@ -11,7 +11,7 @@ import Record from "./routes/Record";
 import Planning from "./routes/Planning";
 
 // store:
-import { Provider } from "react-redux";
+import { Provider as StoreProvider } from "react-redux";
 import { store } from "./store";
 
 // material ui theme:
@@ -37,7 +37,7 @@ const theme = createTheme({
 
 function App() {
     return (
-        <Provider store={store}>
+        <StoreProvider store={store}>
             <ThemeProvider theme={theme}>
                 <Router>
                     <Switch>
@@ -53,7 +53,7 @@ function App() {
                     </Switch>
                 </Router>
             </ThemeProvider>
-        </Provider>
+        </StoreProvider>
     );
 }
 
