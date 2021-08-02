@@ -3,12 +3,24 @@ import Layout from "../layouts/Auth.layout";
 
 import { Link as RouterLink } from "react-router-dom";
 
-import { Card, CardActions, CardContent, TextField, Button, Link } from "@material-ui/core";
+import {
+    Card,
+    CardActions,
+    CardContent,
+    TextField,
+    Button,
+    Link,
+    FormControlLabel,
+    Checkbox,
+    Typography,
+} from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 
-const Login = () => {
+const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [checked, setChecked] = useState(false);
 
     return (
         <Layout>
@@ -19,9 +31,9 @@ const Login = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         label="Email"
-                        // error
                         helperText=" "
                         color="primary"
+                        error={false}
                     />
                     <TextField
                         value={password}
@@ -30,20 +42,40 @@ const Login = () => {
                         // error
                         helperText=" "
                     />
+                    <TextField
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        label="Name"
+                        // error
+                        helperText=" "
+                    />
+                    <FormControlLabel
+                        inputProps={{ "aria-label": "Checkbox A" }}
+                        control={
+                            <Checkbox
+                                className="card__checkbox"
+                                value={checked}
+                                color="primary"
+                                onChange={(e) => setChecked(e.target.value)}
+                            />
+                        }
+                        label={<Typography>I agree with the rules</Typography>}
+                        color="primary"
+                    />
                 </CardContent>
                 <CardActions className="card__actions">
                     <Button className="card__button" variant="contained" color="primary">
-                        Login <SendIcon className="card__icon" />
+                        Register <SendIcon className="card__icon" />
                     </Button>
-                    <p>
-                        Dont have an account?
+                    <p className="card__text">
+                        Already have an account?
                         <Link
                             className="card__link"
                             color="secondary"
                             component={RouterLink}
-                            to="/register"
+                            to="/login"
                         >
-                            Register now
+                            Log in!
                         </Link>
                     </p>
                 </CardActions>
@@ -52,4 +84,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

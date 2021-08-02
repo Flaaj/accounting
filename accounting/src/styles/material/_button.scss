@@ -1,0 +1,15 @@
+.MuiButton-root {
+    &.small {
+        font-size: 18px;
+        width: 50px;
+
+        &.MuiButton-root {
+            min-width: unset;
+        }
+        
+        .MuiSvgIcon-root  {
+            width: auto;
+            height: auto;
+        }
+    }
+}

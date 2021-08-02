@@ -1,0 +1,27 @@
+@import "../styles/breakpoints";
+
+.row {
+    display: flex;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+
+    &.space-between {
+        justify-content: space-between;
+    }
+
+    &.border-bottom {
+        border-bottom: solid 1px rgba(51, 51, 51, 0.12);
+    }
+
+    &.flex-column-mobile {
+        @include breakpoint-down(md) {
+            flex-direction: column;
+        }
+    }
+
+    &.overflow-md-scroll {
+        @include breakpoint-down(md) {
+            overflow-x: scroll;
+        }
+    }
+}

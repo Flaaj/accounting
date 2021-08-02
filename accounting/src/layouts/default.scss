@@ -6,6 +6,7 @@
 
     &__row {
         display: flex;
+        position: relative;
         height: 100%;
     }
 
@@ -16,5 +17,5 @@
         transform: translate(-50%, -50%);
         font-size: 30px;
         font-weight: 100;
-    };
+    }
 }

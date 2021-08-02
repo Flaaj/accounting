@@ -1,0 +1,25 @@
+@import "../styles/breakpoints";
+
+.table {
+    width: 100%;
+
+    th,
+    td {
+        text-align: left;
+        padding: 15px 5px;
+    }
+
+    th {
+        font-weight: 700;
+    }
+
+    tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    &.min-width-md {
+        @include breakpoint-down(md) {
+            min-width: 700px;
+        }
+    }
+}
