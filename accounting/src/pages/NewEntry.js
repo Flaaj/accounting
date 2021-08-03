@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+
 import Layout from "../layouts/Default.layout";
+
 import Row from "../components/Row";
 import Heading from "../components/Heading";
+import Form from "../components/Form";
 
 import {
     TextField,
@@ -11,6 +14,7 @@ import {
     RadioGroup,
     Radio,
 } from "@material-ui/core";
+import SubmitButton from "../components/SubmitButton";
 
 const NewEntry = () => {
     const [sum, setSum] = useState(0);
@@ -45,18 +49,20 @@ const NewEntry = () => {
                 </FormControl>
                 <TextField
                     value={sum}
+                    type="number"
                     onChange={(e) => setSum(e.target.value)}
-                    label="Password"
-                    // error
+                    label="Sum"
+                    error={false}
                     helperText=" "
                 />
                 <TextField
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    label="Password"
-                    // error
+                    label="Description"
+                    error={false}
                     helperText=" "
                 />
+                <SubmitButton text="Create" className="medium"/>
             </Form>
         </Layout>
     );

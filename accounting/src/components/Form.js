@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import "./form"
+import "./form.scss";
 
-const Form = () => {
+const Form = ({ children, className }) => {
     return (
-        <form className="form">
-            
+        <form className={"form" + (className ? ` ${className}` : "")}>
+            {children}
         </form>
     );
-}
+};
 
 export default Form;
