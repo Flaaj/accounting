@@ -19,11 +19,7 @@
         width: 100%;
         position: relative;
     }
-
-    & &__icon {
-        position: absolute;
-        right: 12px;
-    }
+    
     & &__link {
         text-transform: uppercase;
         margin-left: 0.5rem;
@@ -39,8 +35,10 @@
 }
 
 .MuiCard-root {
-    @include breakpoint-up(md) {
-        width: 66.66%;
+    &.big {
+        @include breakpoint-up(md) {
+            width: 66.66%;
+        }
     }
 
     &.small {

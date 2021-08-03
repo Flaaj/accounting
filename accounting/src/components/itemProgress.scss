@@ -1,0 +1,16 @@
+.item-progress {
+    width: 100%;
+
+    .row {
+
+    }
+
+    &__name {
+        font-weight: 500;
+        margin-right: 1ch;
+    }
+
+    &__bar {
+        margin: 5px 0 30px;
+    }
+}

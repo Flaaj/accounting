@@ -29,7 +29,7 @@ const Account = () => {
                     <CardHeader title="Currency account" />
                     <CardContent>{currency(100)}</CardContent>
                 </Card>
-                <Card className="orange">
+                <Card className="orange big">
                     <CardHeader title="Exchange Rates" />
                     <CardContent>
                         <Table

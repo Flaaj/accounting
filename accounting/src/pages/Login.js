@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Layout from "../layouts/Auth.layout";
 
+import Layout from "../layouts/Auth.layout";
+import SubmitButton from "../components/SubmitButton";
 import { Link as RouterLink } from "react-router-dom";
 
-import { Card, CardActions, CardContent, TextField, Button, Link } from "@material-ui/core";
-import SendIcon from "@material-ui/icons/Send";
+import { Card, CardActions, CardContent, TextField, Link } from "@material-ui/core";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ const Login = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         label="Email"
-                        // error
+                        error={false}
                         helperText=" "
                         color="primary"
                     />
@@ -27,14 +27,12 @@ const Login = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         label="Password"
-                        // error
+                        error={false}
                         helperText=" "
                     />
                 </CardContent>
                 <CardActions className="card__actions">
-                    <Button className="card__button" variant="contained" color="primary">
-                        Login <SendIcon className="card__icon" />
-                    </Button>
+                    <SubmitButton text="login" className="card__button" />
                     <p className="card__text">
                         Dont have an account?
                         <Link

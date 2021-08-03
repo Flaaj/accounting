@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+
 import Layout from "../layouts/Auth.layout";
+import SubmitButton from "../components/SubmitButton";
 
 import { Link as RouterLink } from "react-router-dom";
 
@@ -8,13 +10,11 @@ import {
     CardActions,
     CardContent,
     TextField,
-    Button,
     Link,
     FormControlLabel,
     Checkbox,
     Typography,
 } from "@material-ui/core";
-import SendIcon from "@material-ui/icons/Send";
 
 const Register = () => {
     const [email, setEmail] = useState("");
@@ -39,14 +39,14 @@ const Register = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         label="Password"
-                        // error
+                        error={false}
                         helperText=" "
                     />
                     <TextField
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         label="Name"
-                        // error
+                        error={false}
                         helperText=" "
                     />
                     <FormControlLabel
@@ -64,9 +64,8 @@ const Register = () => {
                     />
                 </CardContent>
                 <CardActions className="card__actions">
-                    <Button className="card__button" variant="contained" color="primary">
-                        Register <SendIcon className="card__icon" />
-                    </Button>
+                    <SubmitButton text="register" className="card__button" />
+
                     <p className="card__text">
                         Already have an account?
                         <Link

@@ -24,4 +24,9 @@
             overflow-x: scroll;
         }
     }
+
+    &.symmetric-margin {
+        margin: 15px 0;
+        padding: 0;
+    }
 }
