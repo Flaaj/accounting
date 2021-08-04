@@ -2,11 +2,11 @@
     &.small {
         font-size: 18px;
         width: 50px;
-
+        
         &.MuiButton-root {
             min-width: unset;
         }
-
+        
         .MuiSvgIcon-root {
             width: auto;
             height: auto;
@@ -14,7 +14,19 @@
     }
     
     &.medium {
-        width: 120px;
+        // width: 120px;
+        padding-left: 0;
+        
+        .button {
+            &__text {
+                width: 100%;
+                padding: 0 16px;
+            }
+            &__icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
     }
 
     .button {

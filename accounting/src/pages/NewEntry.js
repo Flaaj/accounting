@@ -26,7 +26,7 @@ const NewEntry = () => {
             <Row className="border-bottom">
                 <Heading>New entry</Heading>
             </Row>
-            <Form className="new-entry-form">
+            <Form className="new-entry-form mw-600">
                 <FormControl component="fieldset">
                     <FormLabel component="legend">Select a category</FormLabel>
                     <RadioGroup
